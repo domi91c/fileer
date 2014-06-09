@@ -7,4 +7,13 @@
 </template>
 
 <template name="index">
+    {{> upload }}
+
+    {{# each files }}
+        <div>{{ url }}</div>
+    {{/each}}
+</template>
+
+<template name="upload">
+    <input type="file" id="Files" multiple>
 </template>

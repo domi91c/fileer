@@ -7,3 +7,7 @@ standard-app-packages
 autopublish
 insecure
 iron-router
+collectionFS
+cfs-filesystem
+graphicsmagick
+Planet
