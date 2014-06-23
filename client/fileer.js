@@ -1,8 +1,11 @@
-initializing(function() {
+initializing(function(root) {
+   
+    root.uuid = UUID = Meteor.uuid();
+
     Planet("index") ({
         helpers: {
             files: function() {
-                return Files.find();
+                return Files.find({ uuid: UUID });
             }
         },
         events: {}
@@ -12,11 +15,27 @@ initializing(function() {
         helpers: {},
         events: {
             'change #Files': function(event, template) {
-                var files = event.target.files;
-                _.each(files, function(file) {
-                    Files.insert(file);
+                FS.Utility.eachFile(event, function(file) {
+                    var newFile = new FS.File(file);
+                    
+                    // Securing Based on uuid
+                    newFile.uuid = UUID;
+
+                    // upload
+                    Files.insert(newFile);
                 });
             }
+        }
+    });
+
+    Planet("download") ({
+        helpers: {
+            files: function() {
+                return Files.find({});
+            }
+        },
+        events: {
+         
         }
     });
 });

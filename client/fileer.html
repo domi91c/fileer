@@ -10,7 +10,32 @@
     {{> upload }}
 
     {{# each files }}
-        <div>{{ url }}</div>
+        {{#with this }}
+            {{#if isUploaded}}
+                <div>{{ name }}</div>
+            {{ else }}
+                uploading...
+            {{/if}}
+        {{/with}}
+    {{/each}}
+
+    {{#if files.count }}
+        <a href="{{ pathFor 'download' _uuid=uuid }}">
+            all uploading list url
+        </a>
+    {{/if}}
+</template>
+
+<template name="download">
+    <div>Files</div>
+    {{# each files }}
+        <ul>
+            <li>
+                <a href="{{ url }}" target="_blank" download>
+                    {{ name }}
+                </a>
+            </li>
+        </ul>
     {{/each}}
 </template>
 
