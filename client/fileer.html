@@ -3,42 +3,123 @@
 </head>
 
 <template name="layout">
-    {{> yield }}
+    <div class="windowed">
+        <div class="outer-wrapper">
+            <section id="page-header" class="toolbar" style="height:5px;"></section>
+            <section id="content" class="">
+                <div class="container">
+                    <div class="content">
+                        <div class="main">
+                            <section class="body">
+                                {{> yield }}
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{> footer }}
+        </div>
+    </div>
 </template>
 
 <template name="index">
+    <div class="page-header">
+        <h2>Fileer upload files</h2>
+    </div>
+    <p>After the files are installed first as a separate being generated. Created with a link you can download files one by one.</p>
     {{> upload }}
-
-    {{# each files }}
-        {{#with this }}
-            {{#if isUploaded}}
-                <div>{{ name }}</div>
-            {{ else }}
-                uploading...
-            {{/if}}
-        {{/with}}
-    {{/each}}
-
+    {{> filelist files=files }}
     {{#if files.count }}
-        <a href="{{ pathFor 'download' _uuid=uuid }}">
-            all uploading list url
-        </a>
+        <div class="center">
+            <p>Of your friends or people you want to download url to share:</p>
+            <div class="btn-group">
+                <input class="textinput textInput width600" type="text" value="{{ absoluteUrl  }}{{ pathFor 'download' _uuid=uuid }}">
+            </div>
+             <div>A total of <b>{{ files.count }}</b> files <b>({{ totalsizes files }})</b></div>
+        </div>
     {{/if}}
 </template>
 
+<template name="filelist">
+    {{> error }}
+    {{#if files.count }}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th style="width:100px;">size</th>
+                    <th style="width:100px;">extension</th>
+                    <th style="width:100px;">link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{# each files }}
+                    {{#with this }}
+                        {{#if isUploaded}}
+                            <tr>
+                                <td>
+                                    {{ name }}
+                                </td>
+                                <td>
+                                    {{ humanFileSize size }}
+                                </td>
+                                <td>
+                                    {{ extension }}
+                                </td>
+                                <td>
+                                    <a href="{{ this.url }}" target="_blank" >Download</a>
+                                </td>
+                            </tr>
+                        {{ else }}
+                            <p class="center">Uploading..</p>
+                        {{/if}}
+                    {{/with}}
+                {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+</template>
+
+<template name="footer">
+    <footer class="center">
+        <a href="https://github.com/yasaricli/fileer"> 
+            <img src="/img/githublogo.png" class="githublogo"/>
+        </a>
+        <div class="mt10">
+            @author <a href="http://yasaricli.com">yasaricli</a>
+        </div> 
+    </footer>
+</template>
+
 <template name="download">
-    <div>Files</div>
-    {{# each files }}
-        <ul>
-            <li>
-                <a href="{{ url }}" target="_blank" download>
-                    {{ name }}
-                </a>
-            </li>
-        </ul>
-    {{/each}}
+    <div class="page-header">
+        <h2>Fileer Download list</h2>
+    </div>
+    <div class="center">
+        <div class="btn btn-small">
+            total of <b>{{ files.count }}</b> files <b>({{ totalsizes files }})</b>
+        </div>
+    </div>
+    {{> filelist files=files }}
+</template>
+
+<template name="error">
+    {{# if error_message }}
+        <div class="error">
+            <strong class="text-error center">
+                {{# if stack}}
+                    {{ error_message }}
+                {{ else }}
+                    The total file size of 5 MB or file extension is not supported.
+                {{/if}}
+            </strong>
+        </div>
+    {{/if}}
 </template>
 
 <template name="upload">
-    <input type="file" id="Files" multiple>
+    <fieldset class="form-actions center">
+        <button type="submit" class="upload-trigger btn btn-primary">Upload Files</button>
+        <input type="file" id="Files" class="hidden" multiple>
+    </fieldset>
 </template>

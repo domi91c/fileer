@@ -31,9 +31,7 @@
                 contentTypes: allows
             },
             onInvalid: function (message) {
-                if (Meteor.isClient) {
-                    alert(message);
-                }
+                // client and server error message
             }
         }
     });

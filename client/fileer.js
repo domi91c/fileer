@@ -1,5 +1,6 @@
 initializing(function(root) {
-   
+
+    Session.setDefault('error_message', false) ;
     root.uuid = UUID = Meteor.uuid();
 
     Planet("index") ({
@@ -14,6 +15,9 @@ initializing(function(root) {
     Planet("upload") ({
         helpers: {},
         events: {
+            'click .upload-trigger': function() {
+                $("#Files").trigger("click");
+            },
             'change #Files': function(event, template) {
                 FS.Utility.eachFile(event, function(file) {
                     var newFile = new FS.File(file);
@@ -22,7 +26,17 @@ initializing(function(root) {
                     newFile.uuid = UUID;
 
                     // upload
-                    Files.insert(newFile);
+                    Files.insert(newFile, function(err, fileObj) {
+                        if (err) {
+
+                            // error_message set
+                            Session.set("error_message", err.message);
+                            return;
+                        }
+
+                        // error_message false
+                        Session.set("error_message", false);
+                    });
                 });
             }
         }

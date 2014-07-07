@@ -1,22 +1,3 @@
-initializing(function() {
-    var Helpers = {
-        absoluteUrl: function() {
-            return Meteor.absoluteUrl();
-        },
-        ifThen: function(a, b) {
-            return a == b;
-        },
-        uuid: function() {
-            return uuid;
-        }
-    };
-
-    // set helpers context
-    _.each(Helpers, function(fn, prop) {
-        UI.registerHelper(prop, fn);  
-    });
-});
-
 // Router
 initializing(function() {
     var preloadSubscriptions, filters;
