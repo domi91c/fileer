@@ -1,0 +1,23 @@
+#!/bin/bash
+
+APP="$(pwd)/bundle"
+BUNDLE_NAME="app.tar.gz"
+PID="/$APP/fileer.pid"
+LOG="/$APP/fileer.log"
+
+# Bundle
+if [ "$1" == "bundle" ]; then
+    print "create bundle....."
+    meteor bundle $BUNDLE_NAME
+    tar -xvf $BUNDLE_NAME
+    rm $BUNDLE_NAME
+    print "\n\n running fileer..."
+fi
+
+# exports 
+export PORT=3000
+export MONGO_URL="mongodb://localhost:27017/fileer"
+export ROOT_URL="http://fileer.com"
+
+# start
+forever start -p $APP --pidFile $PID -l $LOG -a -d "$APP/main.js"
