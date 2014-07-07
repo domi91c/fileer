@@ -3,6 +3,14 @@ fileer
 
 CollectionFS meteor with which to upload and download files.
 
+## Upload files Screenshot
+
+![list](http://fileer.com/cfs/files/files/DKkKp5dh2yHZvB2it/upload.png)
+
+## File list Screenshot
+
+![list](http://fileer.com/cfs/files/files/uy5ae2A44Apv74bbc/list.png)
+
 ## Installation
 
 Install Meteorite packages
