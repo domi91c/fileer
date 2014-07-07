@@ -1,9 +1,15 @@
 #!/bin/bash
 
 APP="$(pwd)/bundle"
+SCRIPT="$APP/main.js"
 BUNDLE_NAME="app.tar.gz"
-PID="/$APP/fileer.pid"
-LOG="/$APP/fileer.log"
+PID="$APP/fileer.pid"
+LOG="$APP/fileer.log"
+
+# stop 
+if [ -f $PID ]; then
+    forever stop $SCRIPT
+fi
 
 # Bundle
 if [ "$1" == "bundle" ]; then
@@ -20,4 +26,4 @@ export MONGO_URL="mongodb://localhost:27017/fileer"
 export ROOT_URL="http://fileer.com"
 
 # start
-forever start -p $APP --pidFile $PID -l $LOG -a -d "$APP/main.js"
+forever start -p $APP --pidFile $PID -l $LOG -a -d $SCRIPT
