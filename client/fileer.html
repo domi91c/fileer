@@ -72,11 +72,7 @@
                                 {{/if}}
                             </tr>
                         {{ else }}
-                            <tr>
-                                <td>
-                                    <img src="/img/loading.svg" class="loading"/>
-                                </td>
-                            </tr>
+                            <img src="/img/loading.svg?{{ randomid }}" class="loading"/>
                         {{/if}}
                     {{/with}}
                 {{/each}}

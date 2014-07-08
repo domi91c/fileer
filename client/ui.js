@@ -3,6 +3,10 @@ initializing(function() {
         console: function() {
             return (arguments);
         },
+        randomid: function() {
+            return Math.random().toString(36).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15);
+        },
         absoluteUrl: function() {
             return (location.protocol + "//" + location.host);
         },
