@@ -19,7 +19,8 @@ Install Meteorite packages
 $ mrt add collectionFS
 $ mrt add cfs-filesystem
 $ mrt add graphicsmagick
-$ meteor run
+$ ./run bundle
+$ ./run start
 ``` 
 if system debian then graphicsmagick package install
 
