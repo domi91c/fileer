@@ -1,5 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script:700);
+
+.logo {
+    font-family: 'Oleo Script', cursive;
+    font-size:60px; 
+    color:#333; 
+    width:135px;
+    margin:auto; 
+    padding:35px;
+}
 .mt10 {
     margin-top:10px;
+}
+
+.mb10 {
+    margin-bottom:10px;
 }
 .githublogo {
     width: 30px; 
@@ -7056,7 +7070,7 @@ h3 {
   float: left;
 }
 #content section.body {
-  padding: 25px 30px 10px;
+  padding: 10px 30px 10px;
   min-width: 786px;
 }
 #content section.body a {

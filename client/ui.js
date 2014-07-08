@@ -1,5 +1,8 @@
 initializing(function() {
     var Helpers = {
+        console: function() {
+            return (arguments);
+        },
         absoluteUrl: function() {
             return (location.protocol + "//" + location.host);
         },

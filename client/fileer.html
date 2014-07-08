@@ -5,9 +5,9 @@
 <template name="layout">
     <div class="windowed">
         <div class="outer-wrapper">
-            <section id="page-header" class="toolbar" style="height:5px;"></section>
             <section id="content" class="">
                 <div class="container">
+                    <div class="logo">fileer</div>
                     <div class="content">
                         <div class="main">
                             <section class="body">
@@ -23,19 +23,16 @@
 </template>
 
 <template name="index">
-    <div class="page-header">
-        <h2>Fileer upload files</h2>
-    </div>
-    <p>After the files are installed first as a separate being generated. Created with a link you can download files one by one.</p>
+    <p class="center">You can share your files with your friends and make a list for your own staff as well</p>
     {{> upload }}
     {{> filelist files=files }}
     {{#if files.count }}
         <div class="center">
-            <p>Of your friends or people you want to download url to share:</p>
+            <p>To reach your files afterwards or share them with your friends, keep the address below.</p>
             <div class="btn-group">
                 <input class="textinput textInput width600" type="text" value="{{ absoluteUrl  }}{{ pathFor 'download' _uuid=uuid }}">
             </div>
-             <div>A total of <b>{{ files.count }}</b> files <b>({{ totalsizes files }})</b></div>
+            <div>Total size for <b>{{ files.count }}</b> files is <b>({{ totalsizes files }})</b></div>
         </div>
     {{/if}}
 </template>
@@ -49,7 +46,9 @@
                     <th>Name</th>
                     <th style="width:100px;">size</th>
                     <th style="width:100px;">extension</th>
-                    <th style="width:100px;">link</th>
+                    {{#if link }}
+                        <th style="width:100px;">link</th>
+                    {{/if}}
                 </tr>
             </thead>
             <tbody>
@@ -66,9 +65,11 @@
                                 <td>
                                     {{ extension }}
                                 </td>
-                                <td>
-                                    <a href="{{ this.url }}" target="_blank" >Download</a>
-                                </td>
+                                {{#if ../../link }}
+                                    <td>
+                                        <a href="{{ this.url }}" target="_blank" >Download</a>
+                                    </td>
+                                {{/if}}
                             </tr>
                         {{ else }}
                             <p class="center">Uploading..</p>
@@ -92,15 +93,12 @@
 </template>
 
 <template name="download">
-    <div class="page-header">
-        <h2>Fileer Download list</h2>
-    </div>
-    <div class="center">
+    <div class="center mb10">
         <div class="btn btn-small">
-            total of <b>{{ files.count }}</b> files <b>({{ totalsizes files }})</b>
+            <div>Total size for <b>{{ files.count }}</b> files is <b>({{ totalsizes files }})</b></div>
         </div>
     </div>
-    {{> filelist files=files }}
+    {{> filelist files=files link=true }}
 </template>
 
 <template name="error">
@@ -110,7 +108,7 @@
                 {{# if stack}}
                     {{ error_message }}
                 {{ else }}
-                    The total file size of 5 MB or file extension is not supported.
+                    Due to the file size is not 5MB and file extension is not supported, it is not loaded.
                 {{/if}}
             </strong>
         </div>
