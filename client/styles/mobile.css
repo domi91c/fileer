@@ -1,0 +1,9 @@
+/* MOBILE styles */
+
+@media only screen and (max-device-width: 400px) {
+    .logo { margin-top: 34px; width:auto; font-size:90px; text-align:center; }
+    .textinput { width:auto; }
+    .windowed .outer-wrapper { width:auto; }
+    .btn { font-size:18px; padding:15px 15px; }
+    .windowed footer { -webkit-border-radius: 0px; border-radius:0px; padding:60px; }
+}
