@@ -5,11 +5,11 @@ CollectionFS meteor with which to upload and download files.
 
 ## Upload files Screenshot
 
-![list](http://fileer.com/cfs/files/files/DKkKp5dh2yHZvB2it/upload.png)
+![list](http://fileer.com/cfs/files/files/G3XvYStJLTBbe6fWq/list.jpg)
 
 ## File list Screenshot
 
-![list](http://fileer.com/cfs/files/files/uy5ae2A44Apv74bbc/list.png)
+![list](http://fileer.com/cfs/files/files/JJy5yYodg4Lxb4rif/upload_list.jpg)
 
 ## Installation
 
