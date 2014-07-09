@@ -6546,7 +6546,6 @@ body {
   background: #e4e8ed;
 }
 .container {
-  min-width: 786px;
   width: auto;
 }
 a {
@@ -6604,7 +6603,6 @@ h3 {
 }
 /* =============================  Layout  ============================== */
 .outer-wrapper {
-  max-width: 1300px;
   margin: 0 auto;
   -webkit-transition: margin-top 0.1s ease;
   -moz-transition: margin-top 0.1s ease;
@@ -7076,14 +7074,12 @@ h3 {
   clear: both;
 }
 #content .main {
-  min-width: 786px;
   width: 100%;
   position: relative;
   float: left;
 }
 #content section.body {
   padding: 10px 30px 10px;
-  min-width: 786px;
 }
 #content section.body a {
   word-break: break-all;
@@ -9117,7 +9113,6 @@ table.vars table.vars th {
 }
 .windowed .outer-wrapper {
   width: 900px;
-  max-width: 900px;
   margin-top: 30px;
   margin-bottom: 30px;
   -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.03);

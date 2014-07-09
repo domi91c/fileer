@@ -9,7 +9,8 @@ initializing(function(root) {
                 return Files.find({ uuid: UUID });
             }
         },
-        events: {}
+        events: {
+        }
     });
 
     Planet("upload") ({
