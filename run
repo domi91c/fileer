@@ -3,28 +3,14 @@
 APP="$(pwd)"
 BUNDLE="$(pwd)/bundle"
 SCRIPT="$BUNDLE/main.js"
-TAR="app.tar.gz"
 PID="$BUNDLE/fileer.pid"
 LOG="$BUNDLE/fileer.log"
 
-# Bundle
-if [ "$1" == "bundle" ]; then
-    echo "create bundle....."
-    meteor bundle $TAR
-    rm -rf $BUNDLE
-    tar -xvf $TAR
-    rm $TAR
-    echo -e "\n\n running fileer..."
-fi
+# exports 
+export PORT=3000
+export MONGO_URL="mongodb://localhost:27017/fileer"
+export ROOT_URL="http://fileer.com"
+export DISABLE_WEBSOCKETS=true
 
-# start
-if [ "$1" == "start" ]; then
-    # exports 
-    export PORT=3000
-    export MONGO_URL="mongodb://localhost:27017/fileer"
-    export ROOT_URL="http://fileer.com"
-    export DISABLE_WEBSOCKETS=true
-
-    forever stop $SCRIPT
-    forever start -p $APP --pidFile $PID -l $LOG -a -d $SCRIPT
-fi
+forever stop $SCRIPT
+forever start -p $APP --pidFile $PID -l $LOG -a -d $SCRIPT

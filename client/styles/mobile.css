@@ -6,4 +6,5 @@
     .windowed .outer-wrapper { width:auto; }
     .btn { font-size:18px; padding:15px 15px; }
     .windowed footer { -webkit-border-radius: 0px; border-radius:0px; padding:60px; }
+    table.table th, table.vars th, table.table td, table.vars td { font-size:11px; }
 }
