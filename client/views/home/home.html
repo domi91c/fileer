@@ -1,0 +1,15 @@
+<template name="home">
+    <p class="center">You can share your files with your friends and make a list for your own staff as well</p>
+    {{> upload }}
+    {{> filelist files=files }}
+    {{#if files.count }}
+        <div class="center">
+            <p>To reach your files afterwards or share them with your friends, keep the address below.</p>
+            <div class="btn-group">
+                <input class="textinput textInput width600" type="text" value="{{ absoluteUrl  }}{{ pathFor 'download' _uuid=uuid }}">
+            </div>
+            <div>Total size for <b>{{ files.count }}</b> files is <b>({{ totalsizes files }})</b></div>
+        </div>
+    {{/if}}
+</template>
+

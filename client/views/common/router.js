@@ -1,6 +1,5 @@
-// Router
 initializing(function() {
-    var preloadSubscriptions, filters;
+    var Ctx = this, preloadSubscriptions, filters;
 
     // main subscribes list
     preloadSubscriptions = [];
@@ -15,6 +14,7 @@ initializing(function() {
         }
     };
 
+
     // configure
     Router.configure({
         layoutTemplate: 'layout',
@@ -22,16 +22,16 @@ initializing(function() {
         notFoundTemplate: 'not_found',
         waitOn: function () {
             return _.map(preloadSubscriptions, function(sub) { 
-                Meteor.subscribe(sub, uuid);
+                Meteor.subscribe(sub);
             });
         }
     });
 
     // Routes
     Router.map(function() {
-        this.route('index', { path: '/', 
+        this.route('home', { path: '/', 
             waitOn: function() {
-                return Meteor.subscribe('files', uuid);
+                return Meteor.subscribe('files', Ctx.uuid);
             }
         });
         this.route('download', { path: '/download/:_uuid',

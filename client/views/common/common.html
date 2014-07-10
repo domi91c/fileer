@@ -1,6 +1,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>fileer</title>
+  <title>free file sharing</title>
 </head>
 
 <template name="layout">
@@ -8,7 +8,7 @@
         <div class="outer-wrapper">
             <section id="content" class="">
                 <div class="container">
-                    <div class="logo">fileer</div>
+                    <div class="logo font-facifico">Fileer</div>
                     <div class="content">
                         <div class="main">
                             <section class="body">
@@ -18,24 +18,15 @@
                     </div>
                 </div>
             </section>
-            {{> footer }}
+            <footer class="center">
+                <a href="https://github.com/yasaricli/fileer"> 
+                </a>
+                <div class="mt10 font-oleo">
+                    ©2014 <span class="fs22 color333 font-facifico">Fileer</span>, all rights reserved. 
+                </div> 
+            </footer>
         </div>
     </div>
-</template>
-
-<template name="index">
-    <p class="center">You can share your files with your friends and make a list for your own staff as well</p>
-    {{> upload }}
-    {{> filelist files=files }}
-    {{#if files.count }}
-        <div class="center">
-            <p>To reach your files afterwards or share them with your friends, keep the address below.</p>
-            <div class="btn-group">
-                <input class="textinput textInput width600" type="text" value="{{ absoluteUrl  }}{{ pathFor 'download' _uuid=uuid }}">
-            </div>
-            <div>Total size for <b>{{ files.count }}</b> files is <b>({{ totalsizes files }})</b></div>
-        </div>
-    {{/if}}
 </template>
 
 <template name="filelist">
@@ -82,26 +73,6 @@
     {{/if}}
 </template>
 
-<template name="footer">
-    <footer class="center">
-        <a href="https://github.com/yasaricli/fileer"> 
-            <img src="/img/githublogo.png" class="githublogo"/>
-        </a>
-        <div class="mt10">
-            @author <a href="http://yasaricli.com">yasaricli</a>
-        </div> 
-    </footer>
-</template>
-
-<template name="download">
-    <div class="center mb10">
-        <div class="btn btn-small">
-            <div>Total size for <b>{{ files.count }}</b> files is <b>({{ totalsizes files }})</b></div>
-        </div>
-    </div>
-    {{> filelist files=files link=true }}
-</template>
-
 <template name="error">
     {{# if error_message }}
         <div class="error">
@@ -114,11 +85,4 @@
             </strong>
         </div>
     {{/if}}
-</template>
-
-<template name="upload">
-    <fieldset class="form-actions center">
-        <button type="submit" class="upload-trigger btn btn-primary">Upload Files</button>
-        <input type="file" id="Files" class="hidden" multiple>
-    </fieldset>
 </template>

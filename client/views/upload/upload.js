@@ -1,17 +1,5 @@
 initializing(function(root) {
-
-    Session.setDefault('error_message', false) ;
-    root.uuid = UUID = Meteor.uuid();
-
-    Planet("index") ({
-        helpers: {
-            files: function() {
-                return Files.find({ uuid: UUID });
-            }
-        },
-        events: {
-        }
-    });
+    var Ctx = this;
 
     Planet("upload") ({
         helpers: {},
@@ -24,7 +12,7 @@ initializing(function(root) {
                     var newFile = new FS.File(file);
                     
                     // Securing Based on uuid
-                    newFile.uuid = UUID;
+                    newFile.uuid = Ctx.uuid;
 
                     // upload
                     Files.insert(newFile, function(err, fileObj) {
@@ -40,17 +28,6 @@ initializing(function(root) {
                     });
                 });
             }
-        }
-    });
-
-    Planet("download") ({
-        helpers: {
-            files: function() {
-                return Files.find({});
-            }
-        },
-        events: {
-         
         }
     });
 });

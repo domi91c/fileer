@@ -1,5 +1,11 @@
-initializing(function() {
-    var Helpers = {
+initializing(function(root) {
+    var Ctx = this;
+
+    // Default sessions
+    Session.setDefault('error_message', false) ;
+
+    // Register Helpers
+    Ctx.registerHelpers({
         console: function() {
             return (arguments);
         },
@@ -14,7 +20,7 @@ initializing(function() {
             return a == b;
         },
         uuid: function() {
-            return uuid;
+            return Ctx.uuid;
         },
         error_message: function() {
             return Session.get("error_message");
@@ -30,15 +36,9 @@ initializing(function() {
             var size_list = [], 
                 fetch = _.each(files.fetch(), function(f) { 
                     size_list.push(f.original.size); });
-            return Helpers.humanFileSize(_.reduce(size_list, function(memo, num) { 
+            return this.humanFileSize(_.reduce(size_list, function(memo, num) { 
                 return memo + num; }, 0)
             );
         }
-    };
-
-    // set helpers context
-    _.each(Helpers, function(fn, prop) {
-        UI.registerHelper(prop, fn);  
     });
 });
-
