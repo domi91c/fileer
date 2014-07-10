@@ -39,6 +39,10 @@ initializing(function() {
                 return Meteor.subscribe('files', this.params._uuid);
             }
         });
+
+        this.route('developers', { path: '/developers' });
+        this.route('about',      { path: '/about' });
+        this.route('contact',    { path: '/contact' });
     });
 
     // filters

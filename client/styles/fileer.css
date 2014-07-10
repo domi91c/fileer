@@ -4,6 +4,8 @@
 .font-oleo { font-family: 'Oleo Script', cursive; }
 .font-facifico { font-family: 'Pacifico', cursive; }
 
+ul, li { list-style:none; padding:0px; margin:0px!important; }
+
 .fs15 { font-size:15px; }
 .fs22 { font-size:22px; }
 .color333 { color:#333; }
@@ -22,6 +24,13 @@
     width: 600px;
     height:5px;
 }
+
+footer a:hover {
+    text-decoration:underline;
+}
+
+.left { float:left; }
+
 .logo {
     text-align:center; 
     font-family: 'Pacifico', cursive;
@@ -9235,3 +9244,14 @@ table.vars table.vars th {
   padding: 8px;
   color: #ffffff;
 }
+
+
+.labelh1 { font-family: 'Oleo Script', cursive;  margin-bottom: 18px; margin-left: 22px; }
+.developers { margin-bottom:50px!important; }
+.developers li { }
+.developers li .avatar { width:200px; height:200px; }
+.developers li .avatar img { border-radius: 17px; border: 10px solid #333; }
+.developers li .bio { margin-left:240px; }
+.developers li legend {  font-family: Georgia,Times New Roman,Serif; font-size: 21px; font-style: italic; border-bottom-width: 1px; margin-bottom:10px; }
+.developers li a { color:#77808d; }
+.developers li a:hover { color:black; }
