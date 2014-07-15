@@ -27,7 +27,8 @@ initializing(function(root) {
                         Session.set("error_message", false);
                     });
                 });
-            }
+            },
+            'click .remove': function(event, template) { }
         }
     });
 });
