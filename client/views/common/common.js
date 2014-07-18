@@ -6,6 +6,9 @@ initializing(function(root) {
 
     // Register Helpers
     Ctx.registerHelpers({
+        prettyDate: function(d) {
+            return moment(d).fromNow();
+        },
         console: function() {
             return (arguments);
         },

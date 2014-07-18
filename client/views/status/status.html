@@ -1,0 +1,17 @@
+<template name="status">
+    <ul class="group-list">
+        {{# each status }}
+            <li class="group level-info">
+                <h3>{{ title }}</h3>
+                <p class="message">{{ content }}</p>
+                <div class="meta">
+                    <span class="last-seen pretty-date">{{ prettyDate created_at }}</span>
+                </div>
+            </li>
+        {{ else }}
+            <li class="center bold fs20">
+                <p>Empty Status</p>
+            </li>
+        {{/each}}
+    </ul>    
+</template>

@@ -34,14 +34,20 @@ initializing(function() {
                 return Meteor.subscribe('files', Ctx.uuid);
             }
         });
+        
         this.route('download', { path: '/download/:_uuid',
             waitOn: function() {
                 return Meteor.subscribe('files', this.params._uuid);
             }
         });
 
+        this.route('status', { path: '/status', 
+            waitOn: function() {
+                return Meteor.subscribe('status');
+            }
+        });
+
         this.route('developers', { path: '/developers' });
-        this.route('about',      { path: '/about' });
         this.route('contact',    { path: '/contact' });
     });
 

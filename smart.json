@@ -3,6 +3,7 @@
     "iron-router": {},
     "collectionFS": {},
     "graphicsmagick": {},
-    "Planet": {}
+    "Planet": {},
+    "moment": {}
   }
 }

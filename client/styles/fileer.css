@@ -9,10 +9,14 @@ ul, li { list-style:none; padding:0px; margin:0px!important; }
 .fs15 { font-size:15px; }
 .fs22 { font-size:22px; }
 .color333 { color:#333; }
+.bold { font-weight:bold; }
+.fs20 { font-size:20px; }
+.mb8 { margin-bottom:8px; }
+.mt20 { margin-top:20px!important; }
+.relative {  position:relative; }
+.left { float:left; }
 
-.relative { 
-    position:relative; 
-}
+
 .filename-absolute {
     color:#ccc; 
     font-size:16px;
@@ -29,9 +33,9 @@ footer a:hover {
     text-decoration:underline;
 }
 
-.left { float:left; }
 
 .logo {
+    display:block; 
     text-align:center; 
     font-family: 'Pacifico', cursive;
     font-size:90px; 
@@ -1387,6 +1391,7 @@ input[type="checkbox"][readonly] {
   background-color: #dff0d8;
   border-color: #468847;
 }
+
 .control-group.info .control-label,
 .control-group.info .help-block,
 .control-group.info .help-inline {
@@ -7544,7 +7549,7 @@ a.icon-share:hover {
 }
 .group-list > li,
 .events > li {
-  padding: 10px 30px 10px 110px;
+  padding: 10px 30px 10px 10px;
   position: relative;
   border-bottom: 2px solid #f2f4f7;
   min-height: 60px;
@@ -7653,9 +7658,7 @@ a.icon-share:hover {
   margin-bottom: 0;
   font-size: 14px;
   padding-right: 24px;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 .group-list > li .message .tag,
 .events > li .message .tag {
@@ -9255,3 +9258,5 @@ table.vars table.vars th {
 .developers li legend {  font-family: Georgia,Times New Roman,Serif; font-size: 21px; font-style: italic; border-bottom-width: 1px; margin-bottom:10px; }
 .developers li a { color:#77808d; }
 .developers li a:hover { color:black; }
+
+.title .date { font-size: 10px;background: rgb(46, 78, 110);color: white;padding: 5px;border-radius: 7px; }
