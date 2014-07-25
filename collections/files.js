@@ -1,6 +1,11 @@
 (function() {
     var root = this, allows;
 
+    //Set Cache Control headers so we don't overload our meteor server with http requests
+    FS.HTTP.setHeadersForGet([
+        ['Cache-Control', 'public, max-age=31536000']
+    ]);
+
     // allow contentTypes list. 
     allows = [
 

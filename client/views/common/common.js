@@ -1,10 +1,6 @@
 initializing(function(root) {
     var Ctx = this;
 
-    FS.HTTP.setHeadersForGet([
-        ['Cache-Control', 'public, max-age=31536000']
-    ]);
-
     // Default sessions
     Session.setDefault('error_message', false) ;
 
