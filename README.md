@@ -1,6 +1,8 @@
 fileer
 ======
 
+[![Build Status](https://api.travis-ci.com/yasaricli/fileer.svg?token=CddKwqpQ3vn4W2NgNjFz)](https://magnum.travis-ci.com/yasaricli/fileer)
+
 CollectionFS meteor with which to upload and download files.
 
 ## Upload files Screenshot
