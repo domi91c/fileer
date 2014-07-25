@@ -1,6 +1,9 @@
 /iron-router
-/blaze-layout
 /collectionFS
+/graphicsmagick
+/Planet
+/moment
+/blaze-layout
 /cfs-base-package
 /cfs-file
 /cfs-collection
@@ -25,6 +28,3 @@
 /cfs-filesystem
 /reactive-property
 /micro-queue
-/graphicsmagick
-/Planet
-/moment

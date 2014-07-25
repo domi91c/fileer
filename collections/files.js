@@ -1,6 +1,6 @@
 (function() {
     var root = this, allows;
-  
+
     // allow contentTypes list. 
     allows = [
 
@@ -36,6 +36,11 @@
         }
     });
 
+
     // allow
-    Files.allow({});
+    Files.deny({
+        download: function() {
+            return false;
+        }
+    });
 }).call(this);
