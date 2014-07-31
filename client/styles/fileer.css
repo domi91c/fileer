@@ -7628,7 +7628,6 @@ a.icon-share:hover {
 .events > li .count {
   color: #fff;
   position: absolute;
-  left: 23px;
   width: 60px;
   height: 60px;
   -webkit-border-radius: 60px;
@@ -9262,3 +9261,5 @@ table.vars table.vars th {
 .title .date { font-size: 10px;background: rgb(46, 78, 110);color: white;padding: 5px;border-radius: 7px; }
 
 .notfound { color:rgba(25, 6, 6, 0.5); font-size: 40px; padding: 50px; }
+.details { padding-left:70px; }
+.count span { display:block; width:50px; height:50px; background:white; }

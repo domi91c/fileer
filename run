@@ -9,7 +9,7 @@ LOG="$BUNDLE/fileer.log"
 # exports 
 export PORT=3000
 export MONGO_URL="mongodb://localhost:27017/fileer"
-export ROOT_URL="http://fileer.com"
+export ROOT_URL="https://fileer.com"
 export DISABLE_WEBSOCKETS=true
 
 forever stop $SCRIPT
