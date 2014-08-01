@@ -3,7 +3,8 @@
 /graphicsmagick
 /Planet
 /moment
-/blaze-layout
+/ms-seo
+/iron-layout
 /cfs-base-package
 /cfs-file
 /cfs-collection
@@ -11,14 +12,17 @@
 /cfs-access-point
 /cfs-worker
 /cfs-upload-http
+/blaze-layout
+/iron-core
+/iron-dynamic-template
 /cfs-filesaver
 /cfs-storage-adapter
 /http-methods
 /numeral
 /data-man
+/emitter
 /cfs-upload-ddp
 /cfs-tempstore
-/emitter
 /http-publish
 /cfs-gridfs
 /power-queue
@@ -28,7 +32,3 @@
 /cfs-filesystem
 /reactive-property
 /micro-queue
-/ms-seo
-/iron-layout
-/iron-core
-/iron-dynamic-template
