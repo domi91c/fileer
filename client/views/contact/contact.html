@@ -1,0 +1,46 @@
+<template name="contact">
+    <form id="ContactForm" class="form-stacked">
+        <fieldset>
+            <legend>Contact us</legend>
+        </fieldset> 
+        {{# if success }} 
+            <span class="help-block success">Thanks for getting in touch with us(<i>{{ success.email }}</i>). We'll get back to you shortly.</span>
+        {{ else }} 
+            <p class="help-block">We’re here to help with any questions or comments. If you just want to say hi, that's cool too.</p>
+            <div class="help-block">For anything else, you can reach us by email at  <span class="mini">helo@fileer.com.</span></div>
+            <div class="control-group">
+                <label class="control-label" for="id_name">
+                    Name <span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <input class="textinput textInput" id="id_name" name="name" type="text">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_email">
+                    Email <span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <input class="textinput textInput" id="id_email" name="email" type="text">
+                </div>
+                {{# if validate "email"  }}
+                    <span class="error fs11">{{ validate "email" }}</span>
+                {{/if}}
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_message">
+                    Message <span class="asteriskField">*</span>
+                </label>
+                <div class="controls">
+                    <textarea class="textinput textInput textarea" id="id_message"></textarea>
+                </div>
+            </div>
+            <fieldset class="form-actions">
+                <button type="submit" class="btn btn-primary">Send</button>
+                {{# if error }}
+                    <span class="error">{{ error }}</span>
+                {{/if}}
+            </fieldset>
+        {{/if}}
+    </form>
+</template>

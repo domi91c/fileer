@@ -42,6 +42,9 @@ initializing(function(root) {
             return this.humanFileSize(_.reduce(size_list, function(memo, num) { 
                 return memo + num; }, 0)
             );
+        },
+        validate: function(type) {
+            return Session.get("validate_" + type);
         }
     });
 });
