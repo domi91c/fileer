@@ -5,11 +5,11 @@
 
 standard-app-packages
 insecure
-iron-router
-collectionFS
-cfs-filesystem
-graphicsmagick
-Planet
-moment
-ms-seo
 accounts-base
+mrt:planet
+iron:router
+manuelschoebel:ms-seo
+mrt:moment
+cfs:standard-packages
+cfs:filesystem
+

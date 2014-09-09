@@ -3,7 +3,7 @@ initializing(function() {
         rendered: function() {},
         helpers: {
             status: function() {
-                return Status.find({});
+                return Status.find({ }, { sort: { created_at: -1 } });
             }
         } 
     }); 
