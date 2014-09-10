@@ -26,7 +26,7 @@
     ];
 
     // too set collections
-    root.Files = Files = Images = new FS.Collection("files", {
+    root.Files = new FS.Collection("files", {
         stores: [
             new FS.Store.FileSystem("files", { path: "~/uploads" })
         ],
