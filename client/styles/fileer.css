@@ -1,9 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Pacifico);
 @import url(//fonts.googleapis.com/css?family=Oleo+Script:700);
 
-
-body { background-color:#e4e8ed; }
-
 .font-oleo { font-family: 'Oleo Script', cursive; }
 .font-facifico { font-family: 'Pacifico', cursive; }
 
@@ -6566,7 +6563,7 @@ body {
   color: #465262;
   -webkit-font-smoothing: antialiased;
   font-family: "Helvetica Neue", helvetica, sans-serif;
-  background: #e4e8ed;
+  background: #c8cbd0;
 }
 .container {
   width: auto;
