@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # CORE BUNDLES VARIABLES
-APPNAME="app.tar.gz"
+APPNAME="fileer"
 VERSION=$(date +%Y-%m-%d-%T) # version name
-BUNDLES="/home/yasaricli/projects/bundles"
+BUNDLES="/home/yasaricli/projects/builds"
 FILEER="$BUNDLES/fileer"
 APP="$FILEER/$VERSION"
 
@@ -49,31 +49,30 @@ startCurrentVersion() {
     forever start -p $CURRENT_APP --pidFile $CURRENT_PID -l $CURRENT_LOG -a -d $CURRENT_SCRIPT
 }
 
-bundleNewVersion() {
+buildNewVersion() {
     eko "$VERSION version loading.."
 
     # rm app and version removed.
-    rm -rf $APPNAME $VERSION
+    rm -rf $APPNAME
 
     # if directory exists then  
-    [ -d "bundle" ] && { rm -rf bundle; }
+    [ -d "$APPNAME" ] && { rm -rf "$APPNAME"; }
 
-    # bundle
-    meteor bundle $APPNAME
+    # build
+    meteor build $APPNAME
     
-    # extract bundle
-    tar -zxvf $APPNAME > /dev/null; rm -rf $APPNAME
+    # extract build
+    tar -zxvf "$APPNAME/$APPNAME.tar.gz" > /dev/null;
 
-    # mv bundle version
-    mv bundle $VERSION
+    # mv build version
+    mv "bundle" $VERSION
 
-    # move current version directory bundles
+    # move current version directory builds
     mv $VERSION $FILEER
 
     # current version set
     echo $VERSION > $CURRENT_VERSION_FILE
-
-    eko "fileer $VERSION version bundle completed."
+    eko "fileer $VERSION version build completed."
 
     forever stop $CURRENT_SCRIPT
     forever start -p $APP --pidFile $PID -l $LOG -a -d $SCRIPT
@@ -82,7 +81,7 @@ bundleNewVersion() {
 
 # CASES ARGS $1 TYPE
 [ "$1" = "version" ] && { currentVersion; }
-[ "$1" = "bundle" ] && { bundleNewVersion; }
+[ "$1" = "build" ] && { buildNewVersion; }
 [ "$1" = "restart" ] && { restartCurrentVersion; }
 [ "$1" = "start" ] && { startCurrentVersion; }
 [ "$1" = "stop" ] && { stopCurrentVersion; }
