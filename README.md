@@ -1,31 +1,22 @@
 fileer
 ======
 
-[![Build Status](https://api.travis-ci.com/yasaricli/fileer.svg?token=CddKwqpQ3vn4W2NgNjFz)](https://magnum.travis-ci.com/yasaricli/fileer)
-
-CollectionFS meteor with which to upload and download files.
-
-## Upload files Screenshot
-
-![list](http://fileer.com/cfs/files/files/G3XvYStJLTBbe6fWq/list.jpg)
-
-## File list Screenshot
-
-![list](http://fileer.com/cfs/files/files/JJy5yYodg4Lxb4rif/upload_list.jpg)
+CollectionFS Meteor with which to upload and download files.
 
 ## Installation
 
-Install Meteorite packages
-
 ```bash
-$ mrt add collectionFS
-$ mrt add cfs-filesystem
-$ mrt add graphicsmagick
-$ ./run bundle
-$ ./run start
+$ git clone https://github.com/yasaricli/fileer.git
+$ cd fileer
+$ meteor update
+$ meteor run 
 ``` 
-if system debian then graphicsmagick package install
 
+if production mode version Installation
+```bash
+$ ./production build # build new date version 
+$ ./production restart # forever restart 
+``` 
 Add the following line to http or server or location context to increase the size limit in nginx.conf, enter:
 
     # set client body size to 2M #
