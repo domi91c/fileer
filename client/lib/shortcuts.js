@@ -10,7 +10,7 @@
             // set registerHelpers
             registerHelpers: function(Obj) {
                 _.each(Obj, function(fn, prop) {
-                    UI.registerHelper(prop, fn.bind(Obj));
+                    Template.registerHelper(prop, fn.bind(Obj));
                 });
             }
         }, this);
