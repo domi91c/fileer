@@ -1,5 +1,5 @@
 (function() {
-    var root = this, allows;
+    var root = this;
 
     //Set Cache Control headers so we don't overload our meteor server with http requests
     FS.HTTP.setHeadersForGet([
@@ -35,17 +35,9 @@
             allow: {
                 contentTypes: allows
             },
-            onInvalid: function (message) {
+            onInvalid: function(message) {
                 // client and server error message
             }
-        }
-    });
-
-
-    // allow
-    Files.deny({
-        download: function() {
-            return false;
         }
     });
 }).call(this);

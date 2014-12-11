@@ -16,6 +16,7 @@ ul, li { list-style:none; padding:0px; margin:0px!important; }
 .relative {  position:relative; }
 .left { float:left; }
 
+.pa { position:absolute; }
 
 .filename-absolute {
     color:#ccc; 
@@ -8153,9 +8154,11 @@ div.pastebin textarea {
   border-color: #ddd;
 }
 .error {
-  background: #ffc;
+  background: #DD1E84;
   padding: 5px;
-  color:red; 
+  color:white; 
+  text-align:center;
+  margin-top:20px; 
 }
 .specific {
   color: #cc3300;
