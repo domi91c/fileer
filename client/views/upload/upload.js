@@ -1,34 +1,29 @@
 initializing(function(root) {
-    var Ctx = this;
+    var _this = this;
 
     Planet("upload") ({
         helpers: {},
         events: {
-            'click .upload-trigger': function() {
+            'click .upload-trigger': function(event, t) {
                 $("#Files").trigger("click");
             },
-            'change #Files': function(event, template) {
-                FS.Utility.eachFile(event, function(file) {
-                    var newFile = new FS.File(file);
+            'change #Files': function(event, t) {
+
+                // Each files insert Files Collection.
+                FS.Utility.eachFile(event, function(f) {
+                    var file = new FS.File(f);
                     
                     // Securing Based on uuid
-                    newFile.uuid = Ctx.uuid;
+                    file.uuid = _this.uuid;
 
-                    // upload
-                    Files.insert(newFile, function(err, fileObj) {
-                        if (err) {
+                    // random filename set math toString characters..
+                    file.name(Math.random().toString(36).slice(2));
 
-                            // error_message set
-                            Session.set("error_message", err.message);
-                            return;
-                        }
-
-                        // error_message false
-                        Session.set("error_message", false);
-                    });
+                    // insert file to Files collection.
+                    Files.insert(file, _this.error);
                 });
             },
-            'click .remove': function(event, template) { }
+            'click .remove': function(event, t) { }
         }
     });
 });

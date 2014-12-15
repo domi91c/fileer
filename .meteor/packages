@@ -11,4 +11,5 @@ cfs:filesystem
 meteor-platform
 manuelschoebel:ms-seo@=0.3.0
 iron:router@=0.9.4
+yasaricli:gitbuttons
 

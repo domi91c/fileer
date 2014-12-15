@@ -45,15 +45,6 @@ initializing(function() {
                 return Meteor.subscribe('files', this.params._uuid);
             }
         });
-
-        this.route('status', { path: '/status', 
-            waitOn: function() {
-                return Meteor.subscribe('status');
-            }
-        });
-
-        this.route('developers', { path: '/developers' });
-        this.route('contact',    { path: '/contact' });
     });
 
     // DDP._allSubscriptionsReady()

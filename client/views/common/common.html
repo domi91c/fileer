@@ -3,9 +3,9 @@
 </head>
 
 <template name="layout">
-    <div class="windowed">
-        <div class="outer-wrapper">
-            <section id="content" class="">
+    <div id="Surface">
+        <div class="wrapper">
+            <section id="content">
                 <div class="container">
                     <a href="/" class="logo font-facifico">Fileer</a>
                     <div class="content">
@@ -18,14 +18,10 @@
                 </div>
             </section>
             <footer class="center">
-                <div class="mt10 font-oleo">
-                    ©2014 <span class="fs22 color333 font-facifico">Fileer</span>, all rights reserved. 
+                <div class="mt10 font-oleo clearfix w170 ma">
+                    {{ > gitbutton user='yasaricli' repo='fileer' type='Star' }}
+                    {{ > gitbutton user='yasaricli' repo='fileer' type='Fork' }}
                 </div> 
-                <div class="mt10">
-                    <a href="/developers">developers</a> | 
-                    <a href="/status">status</a> | 
-                    <a href="/contact">contact</a>
-                </div>
             </footer>
         </div>
     </div>
@@ -76,11 +72,11 @@
 </template>
 
 <template name="error">
-    {{# if error_message }}
+    {{# if error }}
         <div class="error">
             <strong>
-                {{# if stack}}
-                    {{ error_message }}
+                {{# if stack }}
+                    {{ error }}
                 {{ else }}
                     Due to the file size is not 5MB and file extension is not supported, it is not loaded.
                 {{/if}}
@@ -91,7 +87,7 @@
 
 <template name="loading">
     <div class="center">
-        loading..
+        <img src="/throbber.svg">
     </div>
 </template>
 

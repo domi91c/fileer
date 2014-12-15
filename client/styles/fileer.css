@@ -10,13 +10,18 @@ ul, li { list-style:none; padding:0px; margin:0px!important; }
 .fs22 { font-size:22px; }
 .color333 { color:#333; }
 .bold { font-weight:bold; }
+.fs18 { font-size:18px; }
 .fs20 { font-size:20px; }
 .mb8 { margin-bottom:8px; }
 .mt20 { margin-top:20px!important; }
 .relative {  position:relative; }
 .left { float:left; }
+.w170 { width:170px; }
+.ma { margin:auto; }
 
 .pa { position:absolute; }
+
+.forkme { position: absolute; top: 0; right: 0; border: 0; }
 
 .filename-absolute {
     color:#ccc; 
@@ -5639,104 +5644,7 @@ a.badge:focus {
   width: 16px;
   height: 16px;
 }
-.github-btn {
-  height: 20px;
-  overflow: hidden;
-  font: bold 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-rendering: optimizeLegibility;
-}
-.gh-btn,
-.gh-count,
-.gh-ico {
-  float: left;
-}
-.gh-btn,
-.gh-count {
-  padding: 2px 5px 2px 4px;
-  color: #666;
-  text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.gh-btn {
-  background-color: #e6e6e6;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-repeat: no-repeat;
-  border: 1px solid #ccc;
-  border-bottom-color: #bbb;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-.gh-btn:hover,
-.gh-btn:focus {
-  color: #333;
-  text-decoration: none;
-  background-position: 0 -10px;
-}
-.gh-btn:hover .gh-icon,
-.gh-btn:focus .gh-icon {
-  opacity: 0.75;
-  filter: alpha(opacity=75);
-}
-.gh-btn:active {
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-}
-.gh-ico {
-  width: 14px;
-  height: 14px;
-  margin-right: 4px;
-  vertical-align: middle;
-  background: url(../images/github-icons.png) no-repeat 0 0;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-}
-.gh-count {
-  display: none;
-  /* hidden to start */
-
-  margin-left: 2px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-.gh-count:hover,
-.gh-count:focus {
-  color: #333;
-  text-decoration: none;
-  background-color: #f5f5f5;
-  border-color: #d5d5d5;
-}
-.github-btn-large {
-  height: 30px;
-}
-.github-btn-large .gh-btn,
-.github-btn-large .gh-count {
-  padding: 3px 10px 3px 8px;
-  font-size: 16px;
-  line-height: 22px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.github-btn-large .gh-ico {
-  width: 22px;
-  height: 22px;
-  background-position: 0 -20px;
-}
-.github-btn-large .gh-count {
-  margin-left: 4px;
-}
+.github-btn { display:block; margin-right:10px; float:left; }
 .select2-container,
 .select2-drop,
 .select2-search,
@@ -6623,7 +6531,7 @@ h3 {
   padding: 4px 10px;
 }
 /* =============================  Layout  ============================== */
-.outer-wrapper {
+.wrapper {
   margin: 0 auto;
   -webkit-transition: margin-top 0.1s ease;
   -moz-transition: margin-top 0.1s ease;
@@ -7287,7 +7195,7 @@ footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   *zoom: 1;
-  background: #e4e8ed;
+  background: white;
   padding: 70px 30px;
   color: #939aa4;
   font-weight: bold;
@@ -9110,7 +9018,7 @@ table.vars table.vars th {
   body {
     background: #c8cbd0;
   }
-  .outer-wrapper {
+  .wrapper {
     margin-top: 30px;
     margin-bottom: 30px;
     -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.03);
@@ -9131,10 +9039,10 @@ table.vars table.vars th {
     border-radius: 0 0 7px 7px;
   }
 }
-.windowed {
+#Surface {
   background: #c8cbd0;
 }
-.windowed .outer-wrapper {
+#Surface .wrapper {
   width: 900px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -9145,68 +9053,68 @@ table.vars table.vars th {
   -moz-border-radius: 9px;
   border-radius: 9px;
 }
-.windowed .navbar .navbar-inner {
+#Surface .navbar .navbar-inner {
   -webkit-border-radius: 7px 7px 0 0;
   -moz-border-radius: 7px 7px 0 0;
   border-radius: 7px 7px 0 0;
 }
-.windowed footer {
+#Surface footer {
   -webkit-border-radius: 0 0 7px 7px;
   -moz-border-radius: 0 0 7px 7px;
   border-radius: 0 0 7px 7px;
   padding: 10px 10px;
 }
-.windowed .container {
+#Surface .container {
   min-width: auto;
 }
-.windowed #content {
+#Surface #content {
   width: auto;
   min-width: auto;
 }
-.windowed #content.with-left-sidebar {
+#Surface #content.with-left-sidebar {
   width: 900px;
   min-width: 900px;
   background: #ffffff url(../images/dashboard/sidebar-bg.png) -50px top repeat-y;
 }
-.windowed #content.with-left-sidebar .content {
+#Surface #content.with-left-sidebar .content {
   padding-left: 250px;
 }
-.windowed #content.with-left-sidebar .main {
+#Surface #content.with-left-sidebar .main {
   min-width: 0;
   float: right;
 }
-.windowed #content.with-left-sidebar .sidebar {
+#Surface #content.with-left-sidebar .sidebar {
   width: 190px;
   display: block;
   margin-right: 0;
   margin-top: 0;
   margin-left: -250px;
 }
-.windowed #content.with-left-sidebar section.body {
+#Surface #content.with-left-sidebar section.body {
   min-width: 0;
 }
-.windowed-small {
+#Surface-small {
   background: #c8cbd0;
 }
-.windowed-small .outer-wrapper {
+#Surface-small .wrapper {
   width: auto;
   max-width: 400px;
 }
-.windowed-small footer,
-.windowed-small header {
+#Surface-small footer,
+#Surface-small header {
   text-align: center;
   padding: 0;
   min-width: 0;
   width: auto;
 }
-.windowed-small footer {
+#Surface-small footer {
   padding: 10px 25px;
   height: 60px;
 }
-.windowed-small header {
+#Surface-small header {
   height: 40px;
 }
-.windowed-small header h2 {
+#Surface-small header h2 {
   letter-spacing: -1px;
   font-weight: bold;
   font-size: 22px;
@@ -9215,11 +9123,11 @@ table.vars table.vars th {
   margin-top: 2px;
   color: #fff;
 }
-.windowed-small #content .main,
-.windowed-small #content section.body {
+#Surface-small #content .main,
+#Surface-small #content section.body {
   min-width: 0;
 }
-.windowed-small .container {
+#Surface-small .container {
   width: auto;
   min-width: 0;
 }

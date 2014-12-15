@@ -1,9 +1,6 @@
 initializing(function(root) {
     var Ctx = this;
 
-    // Default sessions
-    Session.setDefault('error_message', false) ;
-
     // Register Helpers
     Ctx.registerHelpers({
         prettyDate: function(d) {
@@ -25,8 +22,8 @@ initializing(function(root) {
         uuid: function() {
             return Ctx.uuid;
         },
-        error_message: function() {
-            return Session.get("error_message");
+        error: function() {
+            return Session.get("error");
         },
         humanFileSize: function(bytes, si) {
             var thresh = 1024, units;
