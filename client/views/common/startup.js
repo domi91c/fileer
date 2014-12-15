@@ -6,7 +6,7 @@ Meteor.startup(function() {
             'description': 'You can share your files with your friends and make a list for your own staff as well.'
         },
         og: {
-            'image': Meteor.absoluteUrl('site/logo.png')
+            'image': Meteor.absoluteUrl('logo.png')
         }
     });
 });
