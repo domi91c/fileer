@@ -10,8 +10,7 @@ initializing(function(root) {
             return (arguments);
         },
         randomid: function() {
-            return Math.random().toString(36).substring(2, 15) +
-                Math.random().toString(36).substring(2, 15);
+            return Math.random().toString(36).substring(2);
         },
         absoluteUrl: function() {
             return (location.protocol + "//" + location.host);
