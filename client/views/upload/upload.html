@@ -11,12 +11,9 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th style="width:100px;">size</th>
-                    <th style="width:100px;">extension</th>
-                    {{#if link }}
-                        <th style="width:100px;">link</th>
-                    {{/if}}
+                    <th class="tal">Name</th>
+                    <th class="w100 tac">size</th>
+                    <th class="w100 tac">extension</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,18 +21,18 @@
                     {{#with this }}
                         {{#if isUploaded}}
                             <tr>
-                                <td>
+                                <td class="tal">
                                     {{ name }}
                                 </td>
-                                <td>
+                                <td class="tac">
                                     {{ humanFileSize size }}
                                 </td>
-                                <td>
+                                <td class="tac">
                                     {{ extension }}
                                 </td>
                                 {{#if ../../link }}
-                                    <td>
-                                        <a href="{{ url download=true }}" target="_blank">Download</a>
+                                    <td class='w25'>
+                                        <a href="{{ url download=true }}" target="_blank" class="download"></a>
                                     </td>
                                 {{/if}}
                             </tr>
