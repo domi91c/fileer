@@ -2,7 +2,7 @@
 
 @media only screen and (max-device-width: 400px) {
     .logo { margin-top: 34px; width:auto; font-size:90px; text-align:center; }
-    .textinput { width:auto; }
+    .textInput { width:auto; }
     #Surface .wrapper { width:auto; }
     .btn { font-size:18px; padding:15px 15px; }
     #Surface footer { -webkit-border-radius: 0px; border-radius:0px; padding:60px; }

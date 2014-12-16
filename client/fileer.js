@@ -1,5 +1,3 @@
-var Helpers;
-
 // Default sessions
 Session.setDefault('error', false) ;
 
