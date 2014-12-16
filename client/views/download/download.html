@@ -1,9 +1,9 @@
 <template name="download">
     <div class="center mb10">
         <div class="btn btn-small">
-            <div>Total size for <b>{{ files.count }}</b> files is <b>({{ totalsizes files }})</b></div>
+            <div>Total size for <b>{{ fileer.files.count }}</b> files is <b>({{ totalsizes fileer.files }})</b></div>
         </div>
     </div>
-    {{> filelist files=files link=true }}
+    {{> filelist files=fileer.files link=true }}
 </template>
 

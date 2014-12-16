@@ -1,13 +1,14 @@
-(function() {
-    var Publish = {
-        files: function(uuid) {
-            return Files.find({ uuid: uuid });
+Meteor.publishComposite('fileer', function(fileerId) {
+    return {
+        find: function() {
+            return Fileer.find({ _id: fileerId });
         },
-        status: function() {
-            return Status.find({});
-        }
-    };
-
-    Meteor.publish("files", Publish.files);
-    Meteor.publish("status", Publish.status);
-}).call(this);
+        children: [
+            { 
+                find: function(fileer) {
+                    return Files.find({ fileerId: fileer._id });
+                }
+            }
+        ]
+    }
+});

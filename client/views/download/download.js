@@ -1,10 +1,5 @@
-initializing(function(root) {
-    Planet("download") ({
-        helpers: {
-            files: function() {
-                return Files.find({});
-            }
-        },
-        events: {}
-    });
+Template.download.helpers({
+    fileer: function() {
+        return Fileer.findOne();
+    }
 });
