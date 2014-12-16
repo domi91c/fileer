@@ -19,7 +19,7 @@ Template.upload.events({
             file.name(Math.random().toString(36).slice(2) + match[2]);
 
             // insert file to Files collection.
-            Files.insert(file, ShortCuts.error);
+            Files.insert(file, Shortcuts.error);
         });
 
         // if FileerSubscribed true then subscribe fileer

@@ -8,9 +8,10 @@ mrt:moment
 cfs:standard-packages
 cfs:filesystem
 meteor-platform
-manuelschoebel:ms-seo@=0.3.0
-iron:router@=0.9.4
 yasaricli:gitbuttons
 dburles:collection-helpers
 reywood:publish-composite
 matb33:collection-hooks
+iron:router
+manuelschoebel:ms-seo
+

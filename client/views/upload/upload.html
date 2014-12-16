@@ -4,3 +4,47 @@
         <input type="file" id="Files" class="hidden" multiple>
     </fieldset>
 </template>
+
+<template name="filelist">
+    {{> error }}
+    {{#if files.count }}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th style="width:100px;">size</th>
+                    <th style="width:100px;">extension</th>
+                    {{#if link }}
+                        <th style="width:100px;">link</th>
+                    {{/if}}
+                </tr>
+            </thead>
+            <tbody>
+                {{# each files }}
+                    {{#with this }}
+                        {{#if isUploaded}}
+                            <tr>
+                                <td>
+                                    {{ name }}
+                                </td>
+                                <td>
+                                    {{ humanFileSize size }}
+                                </td>
+                                <td>
+                                    {{ extension }}
+                                </td>
+                                {{#if ../../link }}
+                                    <td>
+                                        <a href="{{ url download=true }}" target="_blank">Download</a>
+                                    </td>
+                                {{/if}}
+                            </tr>
+                        {{ else }}
+                            <img src="/loading.svg" class="loading"/>
+                        {{/if}}
+                    {{/with}}
+                {{/each}}
+            </tbody>
+        </table>
+    {{/if}}
+</template>
