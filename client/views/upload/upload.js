@@ -18,7 +18,7 @@ initializing(function(root) {
                     file.uuid = _this.uuid;
 
                     // random filename set math toString characters..
-                    file.name(Math.random().toString(36).slice(2) + '.' + match[2]);
+                    file.name(Math.random().toString(36).slice(2) + match[2]);
 
                     // insert file to Files collection.
                     Files.insert(file, _this.error);
