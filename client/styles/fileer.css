@@ -38,6 +38,11 @@ footer a:hover {
     text-decoration:underline;
 }
 
+.list { }
+.list tr { }
+.list tr:hover td { background-color:rgb(181, 79, 79)!important; color:white; cursor:pointer; font-weight:bold; }
+
+.link { width:20px; height:20px; display:block; position:absolute; right:3px; top:3px; background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAC9klEQVQ4T62Uz2sTQRTHd2Y3bbUIQulBoqAighf9A7z4A7VJN5tsJGDRWnvxJHhRD55SUESh/0BEjWhFjTXJbjaJB20RxYNSEbxWBbGgFKzapm2ys+N3kuyyapP24MCQTOa9z3vv++aFSP9hhcO6qig8JUnOM7JWXiKR6KhUKt0LC72Lk5PpJdevv79fk+VABucOzvnXVYG6ru9ijI/AOEwI6RYgzskXSqUU5+yDJNEbDZizRIiktQVqmp6A+204rGtXCYIto1zdNM1SS6CmaScQPQ2QjM04lx5Syl/DuUuSyGnsrW4QxpwByzLui/OKwEgkNoj0bwkYAD8dx45ZljUhHEQDZNl5hPI7fVmPGEYuuSIwGo2ehEY3G5nxX9ghwzBeCmNVVcOUKllXM1Qwg8DbYfPJMPLb/gGiYcdkmY7hgmLPAxwyzewLNxNVjU5QSva5mgG+B9+viPvOzsDGTCbzwysZ3dxp2+wdIbQLRguM1cLFYvG5vxniiVAaOOM4tVFI8ETTYhdwf7XRedaLpsx6QOh2B+mjEZJk2yRSLGYL7Tor7uBjwkdFAt9NM98juHVgMpmkU1Nv59CjDYTwXD6f11eDoTlRTEeurhvhafgMexrG4/FNtu3MNCHn0LFRlLcf5Z1lrHoJpb/xBwiFIgcUhSI7sh7ZVWy7urtUKk17QOjXg2mYbWpxHobv8e6yQk882DF0uS6FWH4Yjgz5DRhGVoxefXkaQuDPOG/GnsYYBd3m1Gr0ULmcfSWM+/piBwMBbojMGjDnFILd9WfvAaNR/TLSv+i7XKxWpUi5nHsqfkMDYtB8zIU5jjNUKBjiif2xPKCqascppV40wD9C7OuOIy/jcy+6GW96slYwr2T/BPwd0X8W7xMqDZlmbryVHQHsMPTKNzVbxqAPK4q8BTriGZAdKFFBqXOM0QcYoGuWNY6/rNaLQJtvKKdXjBPKO2pZjy3X3P1TDQaD86lUqtYO5HUZwHt4IkcwH4OFQqG4Fqd2Nr8BSuxqsnenjQEAAAAASUVORK5CYII=') center; background-repeat: no-repeat; background-color:white; padding:5px; }
 
 .logo {
     display:block; 

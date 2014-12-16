@@ -6,10 +6,10 @@
         <div class="center">
             <p>To reach your files afterwards or share them with your friends, keep the address below.</p>
             <div class="btn-group">
-                <input class="textinput textInput width600" type="text" value="{{ absoluteUrl  }}{{ pathFor 'download' _uuid=uuid }}">
+                <input class="textInput width600" type="text" value="{{ downloadUrl uuid }}">
+                <a href="{{ downloadUrl uuid }}" class="link" target='_blank'></a>
             </div>
             <div>Total size for <b>{{ files.count }}</b> files is <b>({{ totalsizes files }})</b></div>
         </div>
     {{/if}}
 </template>
-

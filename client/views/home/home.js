@@ -5,10 +5,14 @@ initializing(function() {
         helpers: {
             files: function() {
                 return Files.find({ uuid: Ctx.uuid });
+            },
+            downloadUrl: function(uuid) {
+                var route = Router.path('download', { _uuid: uuid }).replace('/', '');
+                return Meteor.absoluteUrl(route);
             }
         },
         events: {
-            "click .textinput": function(event) {
+            "click .textInput": function(event) {
                 // click url input select all text
                 $(event.currentTarget).select();
             }
