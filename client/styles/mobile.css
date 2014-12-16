@@ -8,7 +8,7 @@
     #Surface footer { -webkit-border-radius: 0px; border-radius:0px; padding:60px; }
     table.table th, table.vars th, table.table td, table.vars td { font-size:11px; }
 
-    .developers .bio { float: left; margin-top: 30px; text-align: center; margin-left:auto!important; }
-    .developers .avatar { float:none; margin:auto; }
+    #Surface footer { padding:0px 0px 20px 0px; }
+    .table { margin-top:20px; }
     .labelh1 { text-align:center; }
 }
