@@ -9180,3 +9180,7 @@ table.vars table.vars th {
 .count span { display:block; width:50px; height:50px; background:white; }
 .textarea { width: 413px; height: 120px!important; }
 .success { font-size: 12px; font-weight: bold; text-align: center; color:#60b044; }
+
+h4.centered { position: relative; font-size: 20px; text-align: center; } 
+h4.centered span { background: #fff; padding: 0 12px; } 
+h4.centered span:before { display: block; content: ""; position: absolute; left: 0; right: 0; top: 9px; height: 3px; background: #F3F3F3; z-index: -1; }

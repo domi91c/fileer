@@ -1,9 +1,13 @@
 <template name="download">
-    <div class="center mb10">
-        <div class="btn btn-small">
-            <div>Total size for <b>{{ fileer.files.count }}</b> files is <b>({{ totalsizes fileer.files }})</b></div>
+    {{# if fileer }}
+        <div class="center mb10">
+            <div class="btn btn-small">
+                <div>Total size for <b>{{ fileer.files.count }}</b> files is <b>({{ totalsizes fileer.files }})</b></div>
+            </div>
         </div>
-    </div>
-    {{> filelist files=fileer.files link=true }}
+        {{> filelist files=fileer.files link=true }}
+    {{ else }}
+        <h4 class="centered">Fileer not found; <a href="/">click</a> to upload a new file.</h4> 
+    {{/if}}
 </template>
 
